@@ -12,32 +12,36 @@ const changeColor = (e) => {
 
   // version 1 -  if
 
-  //   if (e.keyCode == 38) {
-  //     red += 5;
-  //     green += 5;
-  //     blue += 5;
+  // if (e.keyCode == 38 && red < 255) {
 
-  //   } else if (e.keyCode == 40) {
-  //     red -= 5;
-  //     green -= 5;
-  //     blue -= 5;
-  //   }
+  //   red += 5;
+  //   green += 5;
+  //   blue += 5;
 
-  //   document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-  // 
+  // } else if (e.keyCode == 40 && red >= 0) {
+
+  //   red -= 5;
+  //   green -= 5;
+  //   blue -= 5;
+
+  // }
+
+  // document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
   // version 2 -  switch
 
   switch (e.keyCode) {
 
     case 38:
-      red += 5;
-      green += 5;
-      blue += 5;
+      red < 255 ? red += 5 : red;
+      green < 255 ? green += 5 : green;
+      blue < 255 ? blue += 5 : blue;
+
       break;
     case 40:
-      red -= 5;
-      green -= 5;
-      blue -= 5;
+      red > 0 ? red -= 5 : red;
+      green > 0 ? green -= 5 : green;
+      blue > 0 ? blue -= 5 : blue;
       break;
   }
   document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
